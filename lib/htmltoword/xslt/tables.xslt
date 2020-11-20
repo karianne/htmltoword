@@ -155,6 +155,10 @@
       <xsl:if test="@colspan &gt; 1">
         <w:gridSpan w:val="{@colspan}"/>
       </xsl:if>
+      <xsl:if test="@width &gt; 0">
+        <xsl:variable name="pctVal" select="5000 div 100 * @width"/>
+        <w:tcW w:type="pct" w:w="2500"/>
+      </xsl:if>
     </w:tcPr>
   </xsl:template>
 
